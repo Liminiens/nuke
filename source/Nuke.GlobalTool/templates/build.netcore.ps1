@@ -19,7 +19,7 @@ $TempDirectory = "$PSScriptRoot\_ROOT_DIRECTORY_\.tmp"
 
 $DotNetGlobalFile = "$PSScriptRoot\_ROOT_DIRECTORY_\global.json"
 $DotNetInstallUrl = "https://raw.githubusercontent.com/dotnet/cli/master/scripts/obtain/dotnet-install.ps1"
-$DotNetReleasesUrl = "https://raw.githubusercontent.com/dotnet/core/master/release-notes/releases.json"
+$DotNetVersionDefault = "2.1.300"
 
 $env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE = 1
 $env:DOTNET_CLI_TELEMETRY_OPTOUT = 1
@@ -48,9 +48,9 @@ else {
     $DotNetDirectory = "$TempDirectory\dotnet-win"
     $env:DOTNET_EXE = "$DotNetDirectory\dotnet.exe"
 
-    # If expected version is not set, get latest version
+    # If expected version is not set, use default version
     if (!(Test-Path variable:DotNetVersion)) {
-        $DotNetVersion = $(Invoke-WebRequest -UseBasicParsing $DotNetReleasesUrl | ConvertFrom-Json)[0]."version-sdk"
+        $DotNetVersion = $DotNetVersionDefault
     }
 
     # Download and execute install script

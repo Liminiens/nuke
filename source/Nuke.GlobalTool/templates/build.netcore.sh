@@ -24,7 +24,7 @@ TEMP_DIRECTORY="$SCRIPT_DIR/_ROOT_DIRECTORY_/.tmp"
 
 DOTNET_GLOBAL_FILE="$SCRIPT_DIR/_ROOT_DIRECTORY_/global.json"
 DOTNET_INSTALL_URL="https://raw.githubusercontent.com/dotnet/cli/master/scripts/obtain/dotnet-install.sh"
-DOTNET_RELEASES_URL="https://raw.githubusercontent.com/dotnet/core/master/release-notes/releases.json"
+DOTNET_VERSION_DEFAULT="2.1.300"
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
@@ -50,9 +50,9 @@ else
     DOTNET_DIRECTORY="$TEMP_DIRECTORY/dotnet-unix"
     export DOTNET_EXE="$DOTNET_DIRECTORY/dotnet"
     
-    # If expected version is not set, get latest version
+    # If expected version is not set, use default version
     if [ -z ${DOTNET_VERSION+x} ]; then
-        DOTNET_VERSION=$(FirstJsonValue "version-sdk" $(curl -s "$DOTNET_RELEASES_URL"))
+        DOTNET_VERSION=${DOTNET_VERSION_DEFAULT}
     fi
     
     # Download and execute install script
