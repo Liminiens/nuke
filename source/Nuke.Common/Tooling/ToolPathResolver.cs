@@ -1,4 +1,4 @@
-// Copyright 2018 Maintainers of NUKE.
+﻿// Copyright 2018 Maintainers of NUKE.
 // Distributed under the MIT License.
 // https://github.com/nuke-build/nuke/blob/master/LICENSE
 
@@ -30,13 +30,18 @@ namespace Nuke.Common.Tooling
             ControlFlow.Assert(packageId != null && packageExecutable != null, "packageId != null && packageExecutable != null");
 
             var packageDirectory = (string) (NukeBuild.BuildAssemblyDirectory / packageId);
-            if (!Directory.Exists(packageDirectory))
-            {
+            var paketPackagesDirectory = NukeBuild.RootDirectory / "packages";
+            var paketDirectory = NukeBuild.RootDirectory / ".paket";
+
+            if (!Directory.Exists(packageDirectory) && !Directory.Exists(paketDirectory)) {
                 var installedPackage = NuGetPackageResolver.GetLocalInstalledPackage(packageId);
                 packageDirectory = Path.GetDirectoryName(installedPackage.FileName).NotNull("packageDirectory != null");
             }
+            else if (Directory.Exists(paketDirectory) && Directory.Exists(paketPackagesDirectory)) 
+                packageDirectory = (paketPackagesDirectory / packageId).NotNull("packageDirectory != null");
 
             var executables = Directory.GetFiles(packageDirectory, packageExecutable, SearchOption.AllDirectories);
+
             ControlFlow.Assert(executables.Length > 0, $"Could not find '{packageExecutable}' inside '{packageDirectory}'.");
             if (executables.Length == 1 && framework == null)
                 return executables.Single();
