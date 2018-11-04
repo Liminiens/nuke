@@ -8,7 +8,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{26AEAD
 		paket.dependencies = paket.dependencies
 	EndProjectSection
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PaketExample", "PaketExample\PaketExample.fsproj", "{499A10C5-233B-4169-8333-C706AF54C8E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{BB839C86-1E9A-4C7E-9F1A-0D56082BC5B6}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "PaketExample", "src\PaketExample\PaketExample.fsproj", "{F185BEDE-0D3A-473F-A521-2F3F792F276C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,10 +18,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{499A10C5-233B-4169-8333-C706AF54C8E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{499A10C5-233B-4169-8333-C706AF54C8E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{499A10C5-233B-4169-8333-C706AF54C8E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{499A10C5-233B-4169-8333-C706AF54C8E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB839C86-1E9A-4C7E-9F1A-0D56082BC5B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB839C86-1E9A-4C7E-9F1A-0D56082BC5B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB839C86-1E9A-4C7E-9F1A-0D56082BC5B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB839C86-1E9A-4C7E-9F1A-0D56082BC5B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F185BEDE-0D3A-473F-A521-2F3F792F276C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F185BEDE-0D3A-473F-A521-2F3F792F276C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F185BEDE-0D3A-473F-A521-2F3F792F276C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F185BEDE-0D3A-473F-A521-2F3F792F276C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
