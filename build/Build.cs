@@ -138,7 +138,7 @@ partial class Build : NukeBuild
                 .SetConfiguration(Configuration)
                 .EnableIncludeSymbols()
                 .SetOutputDirectory(OutputDirectory)
-                .SetVersion(GitVersion.NuGetVersionV2)
+                .SetVersion("0.13.0")
                 .SetPackageReleaseNotes(releaseNotes));
         });
 
