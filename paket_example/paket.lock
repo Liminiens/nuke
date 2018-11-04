@@ -937,7 +937,7 @@ NUGET
       NuGet.Versioning (>= 4.8) - restriction: || (>= net46) (>= netstandard1.6)
     NuGet.Versioning (4.8) - restriction: || (>= net461) (>= netstandard2.0)
       NETStandard.Library (>= 1.6.1) - restriction: && (< net46) (>= netstandard1.6)
-    Nuke.Common (0.12.0-alpha0013)
+    Nuke.Common (0.13)
       AutoMapper (>= 6.0.2) - restriction: || (>= net461) (>= netstandard2.0)
       Colorful.Console (>= 1.2.9) - restriction: || (>= net461) (>= netstandard2.0)
       Glob (>= 0.3.2) - restriction: || (>= net461) (>= netstandard2.0)
