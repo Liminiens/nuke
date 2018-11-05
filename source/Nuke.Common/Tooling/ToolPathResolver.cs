@@ -37,7 +37,8 @@ namespace Nuke.Common.Tooling
                 var installedPackage = NuGetPackageResolver.GetLocalInstalledPackage(packageId);
                 packageDirectory = Path.GetDirectoryName(installedPackage.FileName).NotNull("packageDirectory != null");
             }
-            else if (Directory.Exists(paketDirectory) && Directory.Exists(paketPackagesDirectory)) 
+            else if (Directory.Exists(paketDirectory) && Directory.Exists(paketPackagesDirectory))
+                //temporary fix for GitVerison, totally not complete
                 packageDirectory = (paketPackagesDirectory / packageId).NotNull("packageDirectory != null");
 
             var executables = Directory.GetFiles(packageDirectory, packageExecutable, SearchOption.AllDirectories);
