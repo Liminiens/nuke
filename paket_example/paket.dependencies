@@ -1,6 +1,8 @@
+source ..\output
 source https://api.nuget.org/v3/index.json
 
 nuget FSharp.Core
 nuget GitVersion.CommandLine 3.6.5
 nuget Microsoft.AspNetCore.App
+
 nuget Nuke.Common 0.13.0
